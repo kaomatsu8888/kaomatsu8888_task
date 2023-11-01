@@ -16,12 +16,6 @@ class TaskController extends Controller
         // tasks.indexビューを表示
         return view('tasks.index', ['tasks' => $tasks]);
     }
-
-    public function create()
-    {
-        return view('tasks.create');
-    }
-
     // storeメソッドを定義
     public function store(TaskRequest $request)
     {
@@ -36,9 +30,6 @@ class TaskController extends Controller
         // tasks.indexビューにリダイレクト
         return redirect(route('tasks.index'));
     }
-
-
-
     // showメソッドを定義
     public function show($id)
     {
@@ -60,7 +51,6 @@ class TaskController extends Controller
         $task->save();
         return redirect(route('tasks.index'));
     }
-
     // destroyメソッドを定義
     public function destroy($id)
     {

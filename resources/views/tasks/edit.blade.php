@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1>新規タスク投稿</h1>
+    <h1>新規論文投稿</h1>
     @if ($errors->any())
         <div class="error">
             <p>
@@ -37,7 +37,8 @@
         <br>
         <input type="submit" value="更新">
     </form>
-        <button onclick="location.href='{{ route('tasks.show', $task) }}'" style="display: inline-block; margin-left:-120px;">詳細に戻る</button>
+    <button onclick="location.href='{{ route('tasks.show', $task) }}'"
+        style="display: inline-block; margin-left:-120px;">詳細に戻る</button>
 </body>
 
 </html>
