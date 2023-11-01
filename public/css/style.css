@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* CSS Document */
+.body {
+    width: 300px;
+    height: 100px;
+    }
+
+.button-grope {
+    display: flex;
+    }
+.button-grope > *:not(:last-child) {
+    margin-right: 10px;
+    }
+.error {
+    color: red;
+    }
+
+
