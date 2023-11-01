@@ -3,37 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>論文詳細
-    </title>
+    <title>task show</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body>
-    <h1>論文詳細</h1>
+    <h1>タスク詳細</h1>
+    <p>【タイトル】</p>
     <p>{{ $task->title }}</p>
     <p>{!! nl2br(e($task->body)) !!}</p>
-    <button onclick="location.href='{{ route('tasks.index') }}'">一覧に戻る</button>
-    <button onclick="location.href='{{ route('tasks.edit', $task) }}'">編集する</button>
+    <div class="button-group">
+        <button onclick="location.href='{{ route('tasks.index') }}'">一覧に戻る</button>
+        <button onclick="location.href='{{ route('tasks.edit', $task) }}'">編集する</button>
 
-    @if ($errors->any())
-        <div class="error">
-            <p>
-                <b>{{ count($errors) }}件のエラーがあります。</b>
-            </p>
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
-
-    <form action="{{ route('tasks.destroy', $task) }}" method="post">
-        @csrf
-        @method('DELETE')
-        <button type="submit">削除する</button>
+        <form action="{{ route('tasks.destroy', $task) }}"method="post">
+            @csrf
+            @method('DELETE')
+            <input type="submit" value="削除する" onclick="if(!confirm('削除しますか？')){return false;}">
+        </form>
+    </div>
 </body>
 
 </html>

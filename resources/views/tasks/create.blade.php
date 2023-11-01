@@ -10,7 +10,7 @@
     </title>
 </head>
 
-<body>
+<body><!-- bodyタグの中身を以下に置き換える -->
     <h1>新規論文投稿</h1>
     @if ($errors->any())
         <div class="error">

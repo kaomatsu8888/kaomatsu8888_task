@@ -26,4 +26,9 @@ class TaskRequest extends FormRequest
             'body' => 'required|string|max:2000',
         ];
     }
+    public function attributes()
+    {
+        return [
+        ];
+    }
 }
